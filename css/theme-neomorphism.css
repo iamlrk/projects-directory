@@ -1,0 +1,106 @@
+/* Neomorphism Theme - Soft, Subtle, Elegant */
+[data-theme="neomorphism"] {
+    /* Core Colors */
+    --bg-color: #e0e5ec;
+    --nav-bg-color: #e0e5ec;
+    --border-color: transparent;
+    
+    /* Typography */
+    --text-heading: #2c3e50;
+    --text-subheading: #34495e;
+    --text-body: #4a5568;
+    --text-muted: #718096;
+    --text-accent: #667eea;
+    --text-tag: #5a67d8;
+    
+    /* Neomorphism specific */
+    --shadow-light: -8px -8px 16px rgba(255, 255, 255, 0.8);
+    --shadow-dark: 8px 8px 16px rgba(163, 177, 198, 0.6);
+    --shadow-inset-light: inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+    --shadow-inset-dark: inset 4px 4px 8px rgba(163, 177, 198, 0.4);
+}
+
+[data-theme="neomorphism"] body {
+    background-color: var(--bg-color);
+}
+
+[data-theme="neomorphism"] nav {
+    background-color: var(--nav-bg-color);
+    box-shadow: var(--shadow-light), var(--shadow-dark);
+    border: none;
+}
+
+[data-theme="neomorphism"] nav::after {
+    display: none;
+}
+
+[data-theme="neomorphism"] .project-card,
+[data-theme="neomorphism"] .hero-status,
+[data-theme="neomorphism"] .skill-category {
+    background: var(--bg-color);
+    border: none;
+    box-shadow: var(--shadow-light), var(--shadow-dark);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+[data-theme="neomorphism"] .project-card:hover {
+    box-shadow: 
+        -12px -12px 20px rgba(255, 255, 255, 0.9),
+        12px 12px 20px rgba(163, 177, 198, 0.7);
+    transform: translateY(-3px);
+}
+
+[data-theme="neomorphism"] .project-link,
+[data-theme="neomorphism"] .link-card {
+    background: var(--bg-color);
+    border: none;
+    box-shadow: var(--shadow-light), var(--shadow-dark);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+[data-theme="neomorphism"] .project-link:hover,
+[data-theme="neomorphism"] .link-card:hover {
+    box-shadow: var(--shadow-inset-light), var(--shadow-inset-dark);
+}
+
+[data-theme="neomorphism"] .tech-tag,
+[data-theme="neomorphism"] .skill-tag {
+    background: var(--bg-color);
+    border: none;
+    box-shadow: 
+        -2px -2px 6px rgba(255, 255, 255, 0.6),
+        2px 2px 6px rgba(163, 177, 198, 0.4);
+    border-radius: 12px;
+}
+
+[data-theme="neomorphism"] .tech-tag:hover,
+[data-theme="neomorphism"] .skill-tag:hover {
+    box-shadow: var(--shadow-inset-light), var(--shadow-inset-dark);
+}
+
+[data-theme="neomorphism"] .hero-title .highlight {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme="neomorphism"] #theme-toggle {
+    background: var(--bg-color) !important;
+    box-shadow: var(--shadow-light), var(--shadow-dark) !important;
+    border: none !important;
+    border-radius: 15px !important;
+    padding: 8px 16px !important;
+}
+
+[data-theme="neomorphism"] #theme-toggle:hover {
+    box-shadow: var(--shadow-inset-light), var(--shadow-inset-dark) !important;
+}
+
+[data-theme="neomorphism"] footer {
+    border-top: none;
+    box-shadow: 0 -8px 16px rgba(163, 177, 198, 0.3);
+}
+

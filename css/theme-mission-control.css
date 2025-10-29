@@ -1,0 +1,187 @@
+/* Mission Control Theme - Clean, Professional, Data-Focused */
+[data-theme="mission-control"] {
+    /* Core Colors */
+    --bg-color: #1a1d29;
+    --nav-bg-color: #252936;
+    --border-color: #3a4556;
+    
+    /* Typography */
+    --text-heading: #e8eaed;
+    --text-subheading: #c9ccd1;
+    --text-body: #a8adb7;
+    --text-muted: #6f7782;
+    --text-accent: #4a9eff;
+    --text-tag: #7a8799;
+    
+    /* Mission Control specific */
+    --accent-blue: #4a9eff;
+    --accent-green: #00d68f;
+    --accent-orange: #ff8c42;
+    --alert-red: #ff5252;
+}
+
+[data-theme="mission-control"] body {
+    background-color: var(--bg-color);
+    font-family: 'Courier New', 'JetBrains Mono', monospace;
+}
+
+[data-theme="mission-control"] nav {
+    background: linear-gradient(180deg, #2a2f3e 0%, #252936 100%);
+    border-bottom: 1px solid var(--accent-blue);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="mission-control"] nav::after {
+    background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
+    height: 1px;
+}
+
+[data-theme="mission-control"] nav ul li::before {
+    content: '▸ ';
+    color: var(--accent-green);
+    font-weight: normal;
+}
+
+[data-theme="mission-control"] .project-card,
+[data-theme="mission-control"] .hero-status,
+[data-theme="mission-control"] .skill-category {
+    background: linear-gradient(135deg, rgba(42, 47, 62, 0.8) 0%, rgba(37, 41, 54, 0.8) 100%);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent-blue);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+[data-theme="mission-control"] .project-card::before,
+[data-theme="mission-control"] .skill-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent-blue), transparent);
+}
+
+[data-theme="mission-control"] .project-card:hover {
+    border-left-color: var(--accent-green);
+    box-shadow: 0 6px 20px rgba(74, 158, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+[data-theme="mission-control"] .project-header h3::before {
+    content: '[ ';
+    color: var(--accent-green);
+}
+
+[data-theme="mission-control"] .project-header h3::after {
+    content: ' ]';
+    color: var(--accent-green);
+}
+
+[data-theme="mission-control"] .project-link {
+    background: transparent;
+    border: 1px solid var(--accent-blue);
+    color: var(--accent-blue);
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+}
+
+[data-theme="mission-control"] .project-link:hover {
+    background: var(--accent-blue);
+    color: var(--bg-color);
+    box-shadow: 0 0 10px rgba(74, 158, 255, 0.5);
+}
+
+[data-theme="mission-control"] .tech-tag,
+[data-theme="mission-control"] .skill-tag {
+    background: rgba(74, 158, 255, 0.1);
+    border: 1px solid var(--accent-blue);
+    color: var(--accent-blue);
+    font-family: 'Courier New', monospace;
+    font-size: 0.65em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+[data-theme="mission-control"] .link-card {
+    background: rgba(42, 47, 62, 0.6);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="mission-control"] .link-card::before {
+    content: '>';
+    position: absolute;
+    left: 8px;
+    color: var(--accent-green);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+[data-theme="mission-control"] .link-card:hover::before {
+    opacity: 1;
+}
+
+[data-theme="mission-control"] .link-card:hover {
+    background: rgba(74, 158, 255, 0.1);
+    border-color: var(--accent-blue);
+    padding-left: 20px;
+}
+
+[data-theme="mission-control"] .hero-title .highlight {
+    color: var(--accent-blue);
+    position: relative;
+}
+
+[data-theme="mission-control"] .hero-title .highlight::before {
+    content: '[SYSTEM: ';
+    color: var(--accent-green);
+    font-size: 0.4em;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    letter-spacing: 1px;
+}
+
+[data-theme="mission-control"] .hero-title .highlight::after {
+    content: ' ]';
+    color: var(--accent-green);
+}
+
+[data-theme="mission-control"] h2::before {
+    content: '// ';
+    color: var(--accent-green);
+    font-weight: normal;
+}
+
+[data-theme="mission-control"] #theme-toggle {
+    background: rgba(74, 158, 255, 0.1) !important;
+    border: 1px solid var(--accent-blue) !important;
+    color: var(--accent-blue) !important;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.7em !important;
+}
+
+[data-theme="mission-control"] #theme-toggle:hover {
+    background: var(--accent-blue) !important;
+    color: var(--bg-color) !important;
+}
+
+[data-theme="mission-control"] .stat-number {
+    color: var(--accent-green);
+    font-family: 'Courier New', monospace;
+}
+
+[data-theme="mission-control"] .stat-number::after {
+    content: ' OK';
+    color: var(--accent-green);
+    font-size: 0.3em;
+    vertical-align: super;
+}
+

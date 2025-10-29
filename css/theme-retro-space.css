@@ -1,0 +1,220 @@
+/* Retro Space Program Theme - Vintage NASA/Soviet Aesthetic */
+[data-theme="retro-space"] {
+    /* Core Colors */
+    --bg-color: #f4ede4;
+    --nav-bg-color: #2c3e50;
+    --border-color: #8b4513;
+    
+    /* Typography */
+    --text-heading: #2c1810;
+    --text-subheading: #3d2817;
+    --text-body: #4a3728;
+    --text-muted: #8b7355;
+    --text-accent: #d35400;
+    --text-tag: #6d4c2e;
+    
+    /* Retro Space specific */
+    --nasa-red: #fc3d21;
+    --nasa-blue: #0b3d91;
+    --soviet-red: #da291c;
+    --vintage-cream: #faf8f3;
+    --aged-paper: #f4ede4;
+}
+
+[data-theme="retro-space"] body {
+    background-color: var(--aged-paper);
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(211, 84, 0, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(11, 61, 145, 0.03) 0%, transparent 50%);
+    font-family: 'Courier New', monospace;
+}
+
+[data-theme="retro-space"] nav {
+    background: linear-gradient(180deg, #34495e 0%, #2c3e50 100%);
+    border-bottom: 4px solid var(--nasa-red);
+    box-shadow: 0 4px 0 var(--nasa-blue), 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="retro-space"] nav::after {
+    display: none;
+}
+
+[data-theme="retro-space"] nav a {
+    color: #ecf0f1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+[data-theme="retro-space"] .project-card,
+[data-theme="retro-space"] .hero-status,
+[data-theme="retro-space"] .skill-category {
+    background: var(--vintage-cream);
+    border: 3px solid #8b4513;
+    box-shadow: 
+        inset 0 0 20px rgba(139, 69, 19, 0.1),
+        5px 5px 0 rgba(139, 69, 19, 0.2);
+    position: relative;
+}
+
+[data-theme="retro-space"] .project-card::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: 
+        radial-gradient(circle, var(--nasa-red) 30%, transparent 30%),
+        linear-gradient(45deg, var(--nasa-blue) 50%, transparent 50%);
+    opacity: 0.1;
+}
+
+[data-theme="retro-space"] .project-card:hover {
+    box-shadow: 
+        inset 0 0 30px rgba(211, 84, 0, 0.15),
+        7px 7px 0 rgba(139, 69, 19, 0.3);
+    transform: translate(-2px, -2px);
+}
+
+[data-theme="retro-space"] .project-header h3 {
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--nasa-red);
+    padding-bottom: 5px;
+}
+
+[data-theme="retro-space"] .project-link {
+    background: var(--nasa-blue);
+    color: #ffffff;
+    border: 2px solid #0b3d91;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="retro-space"] .project-link:hover {
+    background: var(--nasa-red);
+    border-color: var(--nasa-red);
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="retro-space"] .tech-tag,
+[data-theme="retro-space"] .skill-tag {
+    background: #ecf0f1;
+    border: 2px solid #8b4513;
+    color: #2c1810;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.65em;
+    letter-spacing: 0.5px;
+}
+
+[data-theme="retro-space"] .tech-tag:hover,
+[data-theme="retro-space"] .skill-tag:hover {
+    background: var(--nasa-red);
+    color: #ffffff;
+    border-color: var(--nasa-red);
+}
+
+[data-theme="retro-space"] .link-card {
+    background: var(--vintage-cream);
+    border: 2px solid #8b4513;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+[data-theme="retro-space"] .link-card:hover {
+    background: var(--nasa-blue);
+    color: #ffffff;
+    border-color: var(--nasa-blue);
+    box-shadow: 3px 3px 0 rgba(11, 61, 145, 0.4);
+}
+
+[data-theme="retro-space"] .hero-title {
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+[data-theme="retro-space"] .hero-title .highlight {
+    color: var(--nasa-red);
+    background: var(--nasa-blue);
+    padding: 5px 15px;
+    color: #ffffff;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="retro-space"] h2 {
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid var(--nasa-red);
+    padding-bottom: 10px;
+    position: relative;
+}
+
+[data-theme="retro-space"] h2::before {
+    content: '◆';
+    color: var(--nasa-red);
+    margin-right: 10px;
+}
+
+[data-theme="retro-space"] h2::after {
+    content: '◆';
+    color: var(--nasa-blue);
+    margin-left: 10px;
+}
+
+[data-theme="retro-space"] #theme-toggle {
+    background: var(--nasa-blue) !important;
+    color: #ffffff !important;
+    border: 3px solid #0b3d91 !important;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="retro-space"] #theme-toggle:hover {
+    background: var(--nasa-red) !important;
+    border-color: var(--nasa-red) !important;
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="retro-space"] .stat-number {
+    font-family: 'Courier New', monospace;
+    color: var(--nasa-red);
+}
+
+[data-theme="retro-space"] footer {
+    border-top: 3px double #8b4513;
+    background: var(--vintage-cream);
+}
+
+/* Vintage stamp effect */
+[data-theme="retro-space"] .hero::before {
+    content: 'CLASSIFIED';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--nasa-red);
+    font-family: 'Courier New', monospace;
+    font-size: 2em;
+    font-weight: bold;
+    opacity: 0.1;
+    transform: rotate(-15deg);
+    border: 4px solid var(--nasa-red);
+    padding: 10px 20px;
+}
+

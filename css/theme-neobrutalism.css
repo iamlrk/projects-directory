@@ -1,0 +1,98 @@
+/* Neobrutalism Theme - Bold, Raw, Unapologetic */
+[data-theme="neobrutalism"] {
+    /* Core Colors */
+    --bg-color: #fafafa;
+    --nav-bg-color: #ffff00;
+    --border-color: #000000;
+    
+    /* Typography */
+    --text-heading: #000000;
+    --text-subheading: #000000;
+    --text-body: #1a1a1a;
+    --text-muted: #333333;
+    --text-accent: #ff0000;
+    --text-tag: #000000;
+    
+    /* Neobrutalism specific */
+    --shadow-brutal: 6px 6px 0px #000000;
+    --shadow-brutal-hover: 8px 8px 0px #000000;
+    --border-width: 4px;
+}
+
+[data-theme="neobrutalism"] body {
+    background-color: var(--bg-color);
+    background-image: 
+        repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(0,0,0,0.03) 49px, rgba(0,0,0,0.03) 50px),
+        repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(0,0,0,0.03) 49px, rgba(0,0,0,0.03) 50px);
+}
+
+[data-theme="neobrutalism"] nav {
+    background-color: var(--nav-bg-color);
+    border-bottom: var(--border-width) solid var(--border-color);
+    box-shadow: 0 4px 0px rgba(0, 0, 0, 1);
+}
+
+[data-theme="neobrutalism"] nav::after {
+    display: none;
+}
+
+[data-theme="neobrutalism"] .project-card,
+[data-theme="neobrutalism"] .hero-status,
+[data-theme="neobrutalism"] .skill-category,
+[data-theme="neobrutalism"] .link-card {
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-brutal);
+    border-radius: 0;
+    background: #ffffff;
+}
+
+[data-theme="neobrutalism"] .project-card:hover,
+[data-theme="neobrutalism"] .link-card:hover {
+    box-shadow: var(--shadow-brutal-hover);
+    transform: translate(-2px, -2px);
+}
+
+[data-theme="neobrutalism"] .project-link,
+[data-theme="neobrutalism"] .tech-tag,
+[data-theme="neobrutalism"] .skill-tag {
+    border: 3px solid var(--border-color);
+    border-radius: 0;
+    box-shadow: 3px 3px 0px var(--border-color);
+    background: #00ffff;
+    color: #000000;
+    font-weight: 900;
+}
+
+[data-theme="neobrutalism"] .project-link:hover {
+    background: #ff00ff;
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px var(--border-color);
+}
+
+[data-theme="neobrutalism"] .hero-title .highlight {
+    background: #ff0000;
+    color: #ffffff;
+    padding: 0 10px;
+    box-shadow: 4px 4px 0px #000000;
+}
+
+[data-theme="neobrutalism"] a:hover {
+    text-decoration: none;
+    background: #ffff00;
+}
+
+[data-theme="neobrutalism"] #theme-toggle {
+    border: 3px solid var(--border-color);
+    background: #00ff00 !important;
+    color: #000000;
+    padding: 8px 16px !important;
+    box-shadow: 4px 4px 0px var(--border-color);
+    font-weight: 900;
+}
+
+[data-theme="neobrutalism"] #theme-toggle:hover {
+    background: #ff00ff !important;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--border-color);
+}
+
