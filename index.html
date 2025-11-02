@@ -10,95 +10,177 @@ title: Projects - Ramkiran Lepakshi
 	</div>
 </section>
 
-<section class="projects">
-	<h2>All Projects</h2>
-	<div class="projects-grid">
-		<div class="project-card">
-			<div class="project-header">
-				<h3>Personal Website</h3>
+<section class="projects-layout">
+	<!-- Left Sidebar - Project List -->
+	<div class="projects-sidebar">
+		<h2>All Projects</h2>
+		<div class="project-list">
+			{% if site.projects %}
+				{% assign sorted_projects = site.projects | sort: 'order' %}
+			{% else %}
+				{% assign sorted_projects = '' | split: '' %}
+			{% endif %}
+			{% for project in sorted_projects %}
+			<div class="project-list-item {% if forloop.first %}active{% endif %}" data-project="{{ project.id }}">
+				<h3>{{ project.title }}</h3>
+				<p class="project-list-meta">{{ project.meta }}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	
+	<!-- Right Panel - Project Details -->
+	<div class="projects-detail">
+		{% for project in sorted_projects %}
+		<div class="project-detail-content {% if forloop.first %}active{% endif %}" id="{{ project.id }}">
+			<div class="project-detail-header">
+				<h2>{{ project.title }}{% if project.subtitle %} - {{ project.subtitle }}{% endif %}</h2>
 				<div class="project-links">
-					<a href="https://github.com/iamlrk/iamlrk.github.io" target="_blank" class="project-link">GitHub</a>
-					<a href="https://dev.iamlrk.com" target="_blank" class="project-link">Demo</a>
+					{% if project.github %}
+					<a href="{{ project.github }}" target="_blank" class="project-link">GitHub</a>
+					{% endif %}
+					{% if project.demo %}
+					<a href="{{ project.demo }}" target="_blank" class="project-link">Demo</a>
+					{% endif %}
 				</div>
 			</div>
-			<p class="project-description">
-				Personal website showcasing my skills, projects, and CV. Built with Jekyll and hosted on Cloudflare Pages.
-			</p>
-			<div class="project-tech">
-				<span class="tech-tag">Jekyll</span>
-				<span class="tech-tag">CSS3</span>
-				<span class="tech-tag">HTML5</span>
-				<span class="tech-tag">Cloudflare Pages</span>
-			</div>
-		</div>
-
-		<div class="project-card">
-			<div class="project-header">
-				<h3>Tuppersat - A Satellite in Tupperware | R2D1</h3>
-				<div class="project-links">
-					<a href="https://github.com/iamlrk/tuppersat23-r2d1" target="_blank" class="project-link">GitHub</a>
+			
+			<div class="project-detail-body">
+				{{ project.content }}
+				
+				{% if project.euler_problems %}
+				<h3>Problems Solved</h3>
+				<p class="problem-count"><strong>{{ project.euler_problems.size }} problems solved</strong> and counting...</p>
+				
+				<div class="euler-problems-index">
+					{% for problem in project.euler_problems %}
+					<div class="euler-problem-item" data-problem="{{ problem.number }}">
+						<div class="euler-problem-number">Problem {{ problem.number | prepend: '00' | slice: -2, 2 }}</div>
+						<div class="euler-problem-title">{{ problem.title }}</div>
+						<a href="{{ problem.solution }}" target="_blank" class="euler-solution-link">View Solution →</a>
+					</div>
+					{% endfor %}
+				</div>
+				
+				<div class="euler-pagination">
+					<button class="euler-nav-btn" id="euler-prev" disabled>← Previous</button>
+					<span class="euler-page-indicator">Problem <span id="euler-current">1</span> of {{ project.euler_problems.size }}</span>
+					<button class="euler-nav-btn" id="euler-next">Next →</button>
+				</div>
+				
+				<div class="euler-problem-details" id="euler-details">
+					{% for problem in project.euler_problems %}
+					<div class="euler-detail {% if forloop.first %}active{% endif %}" data-detail="{{ problem.number }}">
+						<h3>Problem {{ problem.number | prepend: '00' | slice: -2, 2 }}: {{ problem.title }}</h3>
+						<div class="euler-description">
+							<p><strong>Challenge:</strong> {{ problem.challenge }}</p>
+							<p><strong>Approach:</strong> {{ problem.approach }}</p>
+							<p><strong>Concepts:</strong> {{ problem.concepts }}</p>
+						</div>
+						<a href="{{ problem.solution }}" target="_blank" class="project-link">View Full Solution on GitHub</a>
+					</div>
+					{% endfor %}
+				</div>
+				{% endif %}
+				
+				<h3>Technology Stack</h3>
+				<div class="project-tech">
+					{% for tech in project.tech %}
+					<span class="tech-tag">{{ tech }}</span>
+					{% endfor %}
 				</div>
 			</div>
-			<p class="project-description">
-				A satellite project designed to fit within a Tupperware container. 
-				The project has sensors like temperature, humidity, and GPS to monitor environmental conditions 
-				during high-altitude balloon flights.
-			</p>
-			<div class="project-tech">
-				<span class="tech-tag">MicroPython</span>
-				<span class="tech-tag">NumPy</span>
-				<span class="tech-tag">Matplotlib</span>
-				<span class="tech-tag">Raspberry Pi</span>
-			</div>
 		</div>
-
-		<div class="project-card">
-			<div class="project-header">
-				<h3>Mechanics of Orbit using Python</h3>
-				<div class="project-links">
-					<a href="https://github.com/Mechanics-of-Orbit/MOPy" target="_blank" class="project-link">GitHub</a>
-				</div>
-			</div>
-			<p class="project-description">
-				An interactive Python library and desktop app that explains orbital mechanics' concepts. 
-				Features interactive visualizations and educational content for students and enthusiasts.
-			</p>
-			<div class="project-tech">
-				<span class="tech-tag">Python</span>
-				<span class="tech-tag">PyQt5</span>
-				<span class="tech-tag">PySide6</span>
-				<span class="tech-tag">SQLite</span>
-			</div>
-		</div>
-
-		<!-- Add more projects here as needed -->
-		<div class="project-card">
-			<div class="project-header">
-				<h3>Add Your Project</h3>
-				<div class="project-links">
-					<a href="https://github.com/iamlrk" target="_blank" class="project-link">GitHub</a>
-				</div>
-			</div>
-			<p class="project-description">
-				This is a placeholder for your next project. Edit the index.html file to add more projects 
-				to your showcase.
-			</p>
-			<div class="project-tech">
-				<span class="tech-tag">Your Tech</span>
-				<span class="tech-tag">Stack Here</span>
-			</div>
-		</div>
+		{% endfor %}
 	</div>
 </section>
 
-<section class="quick-links">
-	<h2>Quick Links</h2>
-	<div class="links-grid">
-		<a href="https://dev.iamlrk.com" class="link-card">Main Website</a>
-		<a href="https://dev.iamlrk.com/about" class="link-card">About Me</a>
-		<a href="https://dev.iamlrk.com/cv" class="link-card">Resume/CV</a>
-		<a href="https://github.com/iamlrk" target="_blank" class="link-card">GitHub</a>
-		<a href="mailto:lepakshiramkiran@duck.com" class="link-card">Contact</a>
-	</div>
-</section>
-
+<script>
+// Project switching functionality
+document.addEventListener('DOMContentLoaded', function() {
+	const projectListItems = document.querySelectorAll('.project-list-item');
+	const projectDetailContents = document.querySelectorAll('.project-detail-content');
+	
+	projectListItems.forEach(item => {
+		item.addEventListener('click', function() {
+			const projectId = this.getAttribute('data-project');
+			
+			// Remove active class from all items
+			projectListItems.forEach(i => i.classList.remove('active'));
+			projectDetailContents.forEach(c => c.classList.remove('active'));
+			
+			// Add active class to clicked item and corresponding detail
+			this.classList.add('active');
+			document.getElementById(projectId).classList.add('active');
+		});
+	});
+	
+	// Project Euler pagination functionality (only if euler problems exist)
+	const eulerPagination = document.querySelector('.euler-pagination');
+	if (eulerPagination) {
+		const eulerProblemItems = document.querySelectorAll('.euler-problem-item');
+		const eulerProblems = Array.from(eulerProblemItems).map(item => parseInt(item.getAttribute('data-problem')));
+		let currentEulerIndex = 0;
+		
+		const prevBtn = document.getElementById('euler-prev');
+		const nextBtn = document.getElementById('euler-next');
+		const currentSpan = document.getElementById('euler-current');
+		const eulerDetails = document.querySelectorAll('.euler-detail');
+		
+		function updateEulerProblem(index) {
+			// Hide all details
+			eulerDetails.forEach(detail => detail.classList.remove('active'));
+			eulerProblemItems.forEach(item => item.classList.remove('active'));
+			
+			// Show current detail
+			const problemNumber = eulerProblems[index];
+			const currentDetail = document.querySelector(`.euler-detail[data-detail="${problemNumber}"]`);
+			const currentItem = document.querySelector(`.euler-problem-item[data-problem="${problemNumber}"]`);
+			
+			if (currentDetail) currentDetail.classList.add('active');
+			if (currentItem) currentItem.classList.add('active');
+			
+			// Update page indicator
+			if (currentSpan) currentSpan.textContent = index + 1;
+			
+			// Update button states
+			if (prevBtn) prevBtn.disabled = index === 0;
+			if (nextBtn) nextBtn.disabled = index === eulerProblems.length - 1;
+			
+			currentEulerIndex = index;
+		}
+		
+		if (prevBtn) {
+			prevBtn.addEventListener('click', function() {
+				if (currentEulerIndex > 0) {
+					updateEulerProblem(currentEulerIndex - 1);
+				}
+			});
+		}
+		
+		if (nextBtn) {
+			nextBtn.addEventListener('click', function() {
+				if (currentEulerIndex < eulerProblems.length - 1) {
+					updateEulerProblem(currentEulerIndex + 1);
+				}
+			});
+		}
+		
+		// Click on problem items to navigate
+		eulerProblemItems.forEach((item, index) => {
+			item.addEventListener('click', function(e) {
+				if (!e.target.classList.contains('euler-solution-link')) {
+					const problemNum = parseInt(this.getAttribute('data-problem'));
+					const problemIndex = eulerProblems.indexOf(problemNum);
+					if (problemIndex !== -1) {
+						updateEulerProblem(problemIndex);
+					}
+				}
+			});
+		});
+		
+		// Initialize first problem as active
+		updateEulerProblem(0);
+	}
+});
+</script>

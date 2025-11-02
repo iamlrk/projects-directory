@@ -9,9 +9,17 @@ markdown: kramdown
 highlighter: rouge
 permalink: pretty
 
+# Collections
+collections:
+  projects:
+    output: false
+    sort_by: order
+
 # Exclude files from processing
 exclude:
   - README.md
+  - PROJECTS.md
+  - _projects/00-TEMPLATE.md
   - Gemfile
   - Gemfile.lock
   - node_modules

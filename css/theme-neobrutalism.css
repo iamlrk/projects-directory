@@ -1,21 +1,21 @@
 /* Neobrutalism Theme - Bold, Raw, Unapologetic */
 [data-theme="neobrutalism"] {
-    /* Core Colors */
-    --bg-color: #fafafa;
-    --nav-bg-color: #ffff00;
-    --border-color: #000000;
+    /* Core Colors - Based on main site palette */
+    --bg-color: #ffffff;
+    --nav-bg-color: #f8f8f8;
+    --border-color: #1a1a1a;
     
     /* Typography */
-    --text-heading: #000000;
-    --text-subheading: #000000;
-    --text-body: #1a1a1a;
-    --text-muted: #333333;
-    --text-accent: #ff0000;
-    --text-tag: #000000;
+    --text-heading: #1a1a1a;
+    --text-subheading: #2d2d2d;
+    --text-body: #333333;
+    --text-muted: #666666;
+    --text-accent: #0066cc;
+    --text-tag: #4a4a4a;
     
     /* Neobrutalism specific */
-    --shadow-brutal: 6px 6px 0px #000000;
-    --shadow-brutal-hover: 8px 8px 0px #000000;
+    --shadow-brutal: 6px 6px 0px #1a1a1a;
+    --shadow-brutal-hover: 8px 8px 0px #1a1a1a;
     --border-width: 4px;
 }
 
@@ -24,6 +24,18 @@
     background-image: 
         repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(0,0,0,0.03) 49px, rgba(0,0,0,0.03) 50px),
         repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(0,0,0,0.03) 49px, rgba(0,0,0,0.03) 50px);
+    font-family: 'Courier New', 'JetBrains Mono', monospace !important;
+}
+
+[data-theme="neobrutalism"] h1,
+[data-theme="neobrutalism"] h2,
+[data-theme="neobrutalism"] h3,
+[data-theme="neobrutalism"] h4,
+[data-theme="neobrutalism"] p,
+[data-theme="neobrutalism"] a,
+[data-theme="neobrutalism"] span,
+[data-theme="neobrutalism"] li {
+    font-family: 'Courier New', 'JetBrains Mono', monospace !important;
 }
 
 [data-theme="neobrutalism"] nav {
@@ -36,6 +48,13 @@
     display: none;
 }
 
+[data-theme="neobrutalism"] nav a,
+[data-theme="neobrutalism"] nav .theme-label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+
 [data-theme="neobrutalism"] .project-card,
 [data-theme="neobrutalism"] .hero-status,
 [data-theme="neobrutalism"] .skill-category,
@@ -43,7 +62,7 @@
     border: var(--border-width) solid var(--border-color);
     box-shadow: var(--shadow-brutal);
     border-radius: 0;
-    background: #ffffff;
+    background: var(--bg-color);
 }
 
 [data-theme="neobrutalism"] .project-card:hover,
@@ -58,41 +77,431 @@
     border: 3px solid var(--border-color);
     border-radius: 0;
     box-shadow: 3px 3px 0px var(--border-color);
-    background: #00ffff;
-    color: #000000;
+    background: var(--text-accent);
+    color: var(--bg-color);
     font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 [data-theme="neobrutalism"] .project-link:hover {
-    background: #ff00ff;
+    background: var(--text-heading);
+    color: var(--bg-color);
     transform: translate(-1px, -1px);
     box-shadow: 4px 4px 0px var(--border-color);
 }
 
+[data-theme="neobrutalism"] h1,
+[data-theme="neobrutalism"] h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+[data-theme="neobrutalism"] h3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+
 [data-theme="neobrutalism"] .hero-title .highlight {
-    background: #ff0000;
-    color: #ffffff;
+    background: var(--text-accent);
+    color: var(--bg-color);
     padding: 0 10px;
-    box-shadow: 4px 4px 0px #000000;
+    box-shadow: 4px 4px 0px var(--border-color);
+    text-transform: uppercase;
 }
 
 [data-theme="neobrutalism"] a:hover {
     text-decoration: none;
-    background: #ffff00;
+    background: var(--nav-bg-color);
+}
+
+[data-theme="neobrutalism"] .link-card {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 900;
 }
 
 [data-theme="neobrutalism"] #theme-toggle {
     border: 3px solid var(--border-color);
-    background: #00ff00 !important;
-    color: #000000;
+    background: var(--text-accent) !important;
+    color: var(--bg-color);
     padding: 8px 16px !important;
     box-shadow: 4px 4px 0px var(--border-color);
     font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 [data-theme="neobrutalism"] #theme-toggle:hover {
-    background: #ff00ff !important;
+    background: var(--text-heading) !important;
+    color: var(--bg-color);
     transform: translate(-2px, -2px);
     box-shadow: 6px 6px 0px var(--border-color);
+}
+
+/* Two-Column Projects Layout */
+[data-theme="neobrutalism"] .projects-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    margin-top: 40px;
+    min-height: 70vh;
+}
+
+[data-theme="neobrutalism"] .projects-sidebar {
+    border: var(--border-width) solid var(--border-color);
+    background: var(--bg-color);
+    box-shadow: var(--shadow-brutal);
+    padding: 20px;
+    height: fit-content;
+    position: sticky;
+    top: 80px;
+}
+
+[data-theme="neobrutalism"] .projects-sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: var(--border-width) solid var(--border-color);
+}
+
+[data-theme="neobrutalism"] .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+[data-theme="neobrutalism"] .project-list-item {
+    padding: 15px;
+    border: 3px solid var(--border-color);
+    background: var(--bg-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+[data-theme="neobrutalism"] .project-list-item:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0px var(--border-color);
+}
+
+[data-theme="neobrutalism"] .project-list-item.active {
+    background: var(--text-accent);
+    color: var(--bg-color);
+    box-shadow: 4px 4px 0px var(--border-color);
+}
+
+[data-theme="neobrutalism"] .project-list-item h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    line-height: 1.2;
+}
+
+[data-theme="neobrutalism"] .project-list-item.active h3 {
+    color: var(--bg-color);
+}
+
+[data-theme="neobrutalism"] .project-list-meta {
+    margin: 0;
+    font-size: 0.75em;
+    color: var(--text-muted);
+    text-transform: none;
+    font-weight: normal;
+}
+
+[data-theme="neobrutalism"] .project-list-item.active .project-list-meta {
+    color: var(--bg-color);
+    opacity: 0.8;
+}
+
+[data-theme="neobrutalism"] .projects-detail {
+    border: var(--border-width) solid var(--border-color);
+    background: var(--bg-color);
+    box-shadow: var(--shadow-brutal);
+    padding: 30px;
+    min-height: 500px;
+}
+
+[data-theme="neobrutalism"] .project-detail-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in;
+}
+
+[data-theme="neobrutalism"] .project-detail-content.active {
+    display: block;
+}
+
+[data-theme="neobrutalism"] .project-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: var(--border-width) solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+[data-theme="neobrutalism"] .project-detail-header h2 {
+    margin: 0;
+    flex: 1;
+    min-width: 250px;
+}
+
+[data-theme="neobrutalism"] .project-detail-body h3 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+[data-theme="neobrutalism"] .project-detail-body h3:first-child {
+    margin-top: 0;
+}
+
+[data-theme="neobrutalism"] .project-detail-body p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+[data-theme="neobrutalism"] .project-detail-body ul {
+    margin: 15px 0 25px 0;
+    padding-left: 20px;
+}
+
+[data-theme="neobrutalism"] .project-detail-body li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    [data-theme="neobrutalism"] .projects-layout {
+        grid-template-columns: 300px 1fr;
+        gap: 20px;
+    }
+    
+    [data-theme="neobrutalism"] .projects-detail {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    [data-theme="neobrutalism"] .projects-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    [data-theme="neobrutalism"] .projects-sidebar {
+        position: relative;
+        top: 0;
+    }
+    
+    [data-theme="neobrutalism"] .project-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    [data-theme="neobrutalism"] .project-list {
+        grid-template-columns: 1fr;
+    }
+    
+    [data-theme="neobrutalism"] .projects-detail {
+        padding: 15px;
+    }
+    
+    [data-theme="neobrutalism"] .project-detail-header {
+        flex-direction: column;
+    }
+}
+
+/* Project Euler Specific Styles */
+[data-theme="neobrutalism"] .problem-count {
+    margin: 10px 0 20px 0;
+    font-size: 1.1em;
+}
+
+[data-theme="neobrutalism"] .euler-problems-index {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 20px 0 30px 0;
+}
+
+[data-theme="neobrutalism"] .euler-problem-item {
+    border: 3px solid var(--border-color);
+    padding: 15px;
+    background: var(--bg-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+[data-theme="neobrutalism"] .euler-problem-item:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0px var(--border-color);
+}
+
+[data-theme="neobrutalism"] .euler-problem-item.active {
+    background: var(--text-accent);
+    box-shadow: 4px 4px 0px var(--border-color);
+}
+
+[data-theme="neobrutalism"] .euler-problem-number {
+    font-size: 0.75em;
+    color: var(--text-muted);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+[data-theme="neobrutalism"] .euler-problem-item.active .euler-problem-number {
+    color: var(--bg-color);
+    opacity: 0.9;
+}
+
+[data-theme="neobrutalism"] .euler-problem-title {
+    font-size: 1em;
+    font-weight: 900;
+    color: var(--text-heading);
+    line-height: 1.3;
+}
+
+[data-theme="neobrutalism"] .euler-problem-item.active .euler-problem-title {
+    color: var(--bg-color);
+}
+
+[data-theme="neobrutalism"] .euler-solution-link {
+    font-size: 0.8em;
+    color: var(--text-accent);
+    text-decoration: none;
+    margin-top: 5px;
+    font-weight: 900;
+}
+
+[data-theme="neobrutalism"] .euler-problem-item.active .euler-solution-link {
+    color: var(--bg-color);
+    text-decoration: underline;
+}
+
+[data-theme="neobrutalism"] .euler-solution-link:hover {
+    text-decoration: underline;
+}
+
+/* Pagination Controls */
+[data-theme="neobrutalism"] .euler-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+    padding: 20px;
+    border: var(--border-width) solid var(--border-color);
+    background: var(--nav-bg-color);
+}
+
+[data-theme="neobrutalism"] .euler-nav-btn {
+    padding: 10px 20px;
+    background: var(--text-accent);
+    color: var(--bg-color);
+    border: 3px solid var(--border-color);
+    cursor: pointer;
+    font-family: 'Courier New', 'JetBrains Mono', monospace;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+    box-shadow: 3px 3px 0px var(--border-color);
+}
+
+[data-theme="neobrutalism"] .euler-nav-btn:hover:not(:disabled) {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px var(--border-color);
+}
+
+[data-theme="neobrutalism"] .euler-nav-btn:disabled {
+    background: var(--border-color);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    opacity: 0.5;
+    box-shadow: none;
+}
+
+[data-theme="neobrutalism"] .euler-page-indicator {
+    font-weight: 900;
+    color: var(--text-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9em;
+}
+
+/* Problem Details */
+[data-theme="neobrutalism"] .euler-problem-details {
+    margin: 30px 0;
+    padding: 25px;
+    border: var(--border-width) solid var(--border-color);
+    background: var(--nav-bg-color);
+    min-height: 250px;
+}
+
+[data-theme="neobrutalism"] .euler-detail {
+    display: none;
+}
+
+[data-theme="neobrutalism"] .euler-detail.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+[data-theme="neobrutalism"] .euler-detail h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--border-color);
+}
+
+[data-theme="neobrutalism"] .euler-description {
+    margin-bottom: 20px;
+}
+
+[data-theme="neobrutalism"] .euler-description p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+[data-theme="neobrutalism"] .euler-description strong {
+    color: var(--text-heading);
+}
+
+/* Responsive for Euler sections */
+@media (max-width: 768px) {
+    [data-theme="neobrutalism"] .euler-problems-index {
+        grid-template-columns: 1fr;
+    }
+    
+    [data-theme="neobrutalism"] .euler-pagination {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    [data-theme="neobrutalism"] .euler-nav-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    [data-theme="neobrutalism"] .euler-problem-details {
+        padding: 15px;
+    }
 }
 

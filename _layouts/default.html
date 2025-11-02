@@ -6,20 +6,16 @@
 			<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 			<meta http-equiv="Pragma" content="no-cache">
 			<meta http-equiv="Expires" content="0">
-		<title>{{ page.title }}</title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-		<!-- Theme stylesheets -->
-		<link rel="stylesheet" type="text/css" href="/css/theme-neobrutalism.css">
-		<link rel="stylesheet" type="text/css" href="/css/theme-neomorphism.css">
-		<link rel="stylesheet" type="text/css" href="/css/theme-techno.css">
-		<link rel="stylesheet" type="text/css" href="/css/theme-mission-control.css">
-		<link rel="stylesheet" type="text/css" href="/css/theme-retro-space.css">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
-		</head>
-		<body>
+	<title>{{ page.title }}</title>
+	<!-- link to main stylesheet -->
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<!-- Neobrutalism theme -->
+	<link rel="stylesheet" type="text/css" href="/css/theme-neobrutalism.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+	</head>
+	<body data-theme="neobrutalism">
 		<!-- Mobile hamburger menu -->
 		<button class="hamburger-toggle" id="hamburger-toggle" onclick="toggleHamburgerMenu()" aria-label="Open menu and timeline">
 			<span></span>
@@ -28,47 +24,35 @@
 		</button>			<!-- Mobile menu overlay -->
 			<div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="closeHamburgerMenu()"></div>
 			
-			<!-- Mobile menu sidebar -->
-			<div class="mobile-menu" id="mobile-menu">
-			<div class="mobile-menu-header">
-				<h3>Theme Menu</h3>
-				<button class="mobile-menu-close" onclick="closeHamburgerMenu()">✕</button>
-			</div>
-				
-			<!-- Theme Selection -->
-			<div class="mobile-menu-section">
-				<h4>Select Theme</h4>
-				<ul class="mobile-nav-links">
-					<li><a href="#" onclick="switchTheme('light'); closeHamburgerMenu(); return false;">Default</a></li>
-					<li><a href="#" onclick="switchTheme('neobrutalism'); closeHamburgerMenu(); return false;">Neobrutalism</a></li>
-					<li><a href="#" onclick="switchTheme('neomorphism'); closeHamburgerMenu(); return false;">Neomorphism</a></li>
-					<li><a href="#" onclick="switchTheme('techno'); closeHamburgerMenu(); return false;">Techno/Cyberpunk</a></li>
-					<li><a href="#" onclick="switchTheme('mission-control'); closeHamburgerMenu(); return false;">Mission Control</a></li>
-					<li><a href="#" onclick="switchTheme('retro-space'); closeHamburgerMenu(); return false;">Retro Space Program</a></li>
-				</ul>
-			</div>
+		<!-- Mobile menu sidebar -->
+		<div class="mobile-menu" id="mobile-menu">
+		<div class="mobile-menu-header">
+			<h3>Menu</h3>
+			<button class="mobile-menu-close" onclick="closeHamburgerMenu()">✕</button>
+		</div>
+		
+		<!-- Quick Links -->
+		<div class="mobile-menu-section">
+			<h4>Quick Links</h4>
+			<ul class="mobile-nav-links">
+				<li><a href="{{ '/' | relative_url }}" onclick="closeHamburgerMenu()">Projects</a></li>
+				<li><a href="https://dev.iamlrk.com" onclick="closeHamburgerMenu()">Main Website</a></li>
+				<li><a href="https://dev.iamlrk.com/about" onclick="closeHamburgerMenu()">About</a></li>
+				<li><a href="https://dev.iamlrk.com/cv" onclick="closeHamburgerMenu()">CV</a></li>
+				<li><a href="https://github.com/iamlrk" target="_blank" onclick="closeHamburgerMenu()">GitHub</a></li>
+			</ul>
+		</div>
+		</div>
 			
-			<!-- Quick Links -->
-			<div class="mobile-menu-section">
-				<h4>Quick Links</h4>
-				<ul class="mobile-nav-links">
-					<li><a href="https://dev.iamlrk.com" onclick="closeHamburgerMenu()">Main Website</a></li>
-					<li><a href="https://github.com/iamlrk" target="_blank" onclick="closeHamburgerMenu()">GitHub</a></li>
-				</ul>
-			</div>
-			</div>
-			
-		<nav>
-    		<ul id="theme-switcher">
-				<li><span class="theme-label">THEME:</span></li>
-        		<li><a href="#" onclick="switchTheme('light'); return false;" data-theme="light">Default</a></li>
-	        	<li><a href="#" onclick="switchTheme('neobrutalism'); return false;" data-theme="neobrutalism">Brutal</a></li>
-        		<li><a href="#" onclick="switchTheme('neomorphism'); return false;" data-theme="neomorphism">Neomorph</a></li>
-        		<li><a href="#" onclick="switchTheme('techno'); return false;" data-theme="techno">Techno</a></li>
-        		<li><a href="#" onclick="switchTheme('mission-control'); return false;" data-theme="mission-control">Mission</a></li>
-        		<li><a href="#" onclick="switchTheme('retro-space'); return false;" data-theme="retro-space">Retro</a></li>
-    		</ul>
-		</nav>
+	<nav>
+   		<ul>
+       		<li><a href="{{ '/' | relative_url }}">Projects</a></li>
+       		<li><a href="https://dev.iamlrk.com">Main Site</a></li>
+       		<li><a href="https://dev.iamlrk.com/about">About</a></li>
+       		<li><a href="https://dev.iamlrk.com/cv">CV</a></li>
+       		<li><a href="https://github.com/iamlrk" target="_blank">GitHub</a></li>
+   		</ul>
+	</nav>
 			<div class="container">
 			
 			{{ content }}
@@ -124,36 +108,5 @@
 			});
 		</script>
 			
-		<script>
-			// Multi-theme switching functionality
-			const body = document.body;
-			
-			// Check for saved theme or default to light mode
-			const currentTheme = localStorage.getItem('theme') || 'light';
-			body.setAttribute('data-theme', currentTheme);
-			updateActiveTheme(currentTheme);
-			
-			function switchTheme(theme) {
-				body.setAttribute('data-theme', theme);
-				localStorage.setItem('theme', theme);
-				updateActiveTheme(theme);
-			}
-			
-			function updateActiveTheme(theme) {
-				// Remove active class from all theme links
-				const themeLinks = document.querySelectorAll('#theme-switcher a');
-				themeLinks.forEach(link => {
-					link.classList.remove('active');
-					if (link.getAttribute('data-theme') === theme) {
-						link.classList.add('active');
-					}
-				});
-			}
-			
-			// Initialize theme on page load
-			document.addEventListener('DOMContentLoaded', function() {
-				updateActiveTheme(currentTheme);
-			});
-		</script>
 		</body>
 	</html>
